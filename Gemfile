@@ -10,6 +10,9 @@ group :production do
   gem 'pg'
 end
 
+gem 'haml-rails'
+gem 'httparty'
+
 gem 'debugger', :group => [:development, :test]
 
 # Use SCSS for stylesheets
