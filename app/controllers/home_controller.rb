@@ -15,4 +15,6 @@ class HomeController < ApplicationController
       @youtube_urls.push url
     end
   end
+  def about
+  end
 end
