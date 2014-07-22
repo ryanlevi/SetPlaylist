@@ -21,6 +21,7 @@
         %p
         -event["performance"].take(10).each do |artist|
           = artist["displayName"] + ", "
+        = "and more!"
         %p
           %br
           %a.btn.btn-default{href: "#", role: "button"} View details »
