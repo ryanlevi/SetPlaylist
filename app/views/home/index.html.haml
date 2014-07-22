@@ -1,4 +1,26 @@
-%form{action: "/playlist", method: "get"}
-  Artist:
-  %input{name: "artist", type: "text"}
-  %input{type: "submit", value: "Submit"}
+.jumbotron
+  .container
+    %h1 Welcome to SetPlaylist!
+    %p SetPlaylist is a simple website that generates and plays a playlist based on the inputted artist's most recent concert setlist. To begin, start typing an artists name below:
+    %p
+    %form.form-horizontal{action: "/playlist", method: "get"}
+      .form-group.form-group-lg{style: "padding-left: 14px;"}
+        .row
+          .col-xs-4
+            %input.form-control{name: "artist", type: "text", placeholder: "Artist"}
+            %br
+        %input.btn.btn-primary.btn-lg{type: "submit", value: "Begin »"}
+        %a.btn.btn-success.btn-lg{role: "button", href: "/about"} Learn more »
+.container
+  .row
+    %h2 Staff Picks
+    %h4 Check out what we're listening to:
+    - @featured_events.each do |event|
+      .col-md-4
+        %h2= event["displayName"]
+        %p
+        -event["performance"].take(10).each do |artist|
+          = artist["displayName"] + ", "
+        %p
+          %br
+          %a.btn.btn-default{href: "#", role: "button"} View details »
