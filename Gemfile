@@ -3,14 +3,19 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2'
-# Use sqlite3 / ps as the databases for Active Record
+# Use sqlite3 as the databases for Active Record on dev and test
 gem 'sqlite3', :group => [:development, :test]
+
+# use thing and postgres for production
 group :production do
   gem 'thin'
   gem 'pg'
 end
 
+# use haml instead of erb
 gem 'haml-rails'
+
+# use httparty for webscraping
 gem 'httparty'
 
 gem 'debugger', :group => [:development, :test]
@@ -36,15 +41,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+# twitter bootstrap css
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 
