@@ -39,8 +39,7 @@
     if(i >= urls.length){
       i=0;
     }
-    player.loadVideoById(urls[i], 0, "");
-    document.getElementById("title").innerHTML = titles[i];
+    go_to(id);
   }
 
   function previous(){
@@ -48,8 +47,7 @@
     if(i < 0){
       i=urls.length-1;
     }
-    player.loadVideoById(urls[i], 0, "");
-    document.getElementById("title").innerHTML = titles[i];
+    go_to(id);
   }
 
   function pause(){
@@ -63,9 +61,9 @@
     }
   }
 
-  function go_to(title, url){
-    player.loadVideoById(url, 0, "");
-    document.getElementById("title").innerHTML = title;
+  function go_to(id){
+    player.loadVideoById(urls[id], 0, "");
+    document.getElementById("title").innerHTML = titles[id];
   }
 .container
   .blog-header{style: "padding-top: 40px;"}
@@ -86,5 +84,5 @@
           - i = 0
           - @youtube_titles.each do |t|
             %li
-              %button.btn-link{onclick: "go_to(titles[#{i}], urls[#{i}])"}= t
+              %button.btn-link{onclick: "go_to(#{i})"}= t
             - i = i + 1
