@@ -8,8 +8,9 @@
 
   // create youtube player
   var player;
-  var i=0;
+  var i;
   function onYouTubePlayerAPIReady() {
+    i=0;
     player = new YT.Player('player', {
       height: '0',
       width: '0',
@@ -53,9 +54,11 @@
 
   function pause(){
     if(player.getPlayerState() == 1){
+      document.getElementById("pause").value = 'Play';
       player.pauseVideo();
     }
     else if(player.getPlayerState() == 2){
+      document.getElementById("pause").value = 'Pause';
       player.playVideo();
     }
   }
@@ -71,7 +74,7 @@
     .col-xs-12.col-sm-6.col-md-8
       %p.lead.blog-description= "Performance at #{@obj.venue} on #{@obj.date.strftime("%m/%d/%Y")}"
       %button.btn.btn-warning{onclick: "previous()"} <<
-      %button.btn.btn-warning#pause{onclick: "pause()"} Pause
+      %input.btn.btn-warning#pause{onclick: "pause()", type: "button", value: "Pause"}
       %button.btn.btn-warning{onclick: "next()"} >>
       #player
       %br
