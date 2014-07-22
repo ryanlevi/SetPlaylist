@@ -1,11 +1,3 @@
-%h2 Setlist
-%p
-%button{onclick: "previous()"} <<
-%button#pause{onclick: "pause()"} Pause
-%button{onclick: "next()"} >>
-#player
-%br
-#title
 %script{src: "http://www.youtube.com/player_api"}
 :javascript
   var urls = [#{@youtube_urls.map { |u| '"' + u.to_s + '"' }.join(", ")}];
@@ -67,3 +59,29 @@
       player.playVideo();
     }
   }
+
+  function go_to(title, url){
+    player.loadVideoById(url, 0, "");
+    document.getElementById("title").innerHTML = title;
+  }
+.container
+  .blog-header{style: "padding-top: 40px;"}
+    %h1.blog-title= @obj.artist
+  .row
+    .col-xs-12.col-sm-6.col-md-8
+      %p.lead.blog-description= "Performance at #{@obj.venue} on #{@obj.date.strftime("%m/%d/%Y")}"
+      %button.btn.btn-warning{onclick: "previous()"} <<
+      %button.btn.btn-warning#pause{onclick: "pause()"} Pause
+      %button.btn.btn-warning{onclick: "next()"} >>
+      #player
+      %br
+      #title= @youtube_titles[0]
+    .col-xs-6.col-md-4
+      .sidebar-module
+        %h4 Setlist
+        %ol.list-unstyled
+          - i = 0
+          - @youtube_titles.each do |t|
+            %li
+              %button.btn-link{onclick: "go_to(titles[#{i}], urls[#{i}])"}= t
+            - i = i + 1

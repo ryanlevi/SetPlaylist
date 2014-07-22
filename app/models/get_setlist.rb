@@ -13,15 +13,28 @@ class GetSetlist
     while !@setlists[i]["sets"]
       i = i + 1
     end
-    if @setlists[i]["sets"]["set"][0]
-      @setlist = @setlists[i]["sets"]["set"][0]["song"]
+    @set = @setlists[i]
+    @artist = @set["artist"]["name"]
+    @venue = @set["venue"]["name"]
+    @date = @set["eventDate"].to_date
+    if @set["sets"]["set"][0]
+      @setlist = @set["sets"]["set"][0]["song"]
     elsif @setlists[i]["sets"]["set"]
-      @setlist = @setlists[i]["sets"]["set"]["song"]
+      @setlist = @set["sets"]["set"]["song"]
     else
       return
     end
   end
   def setlist
     @setlist
+  end
+  def artist
+    @artist
+  end
+  def venue
+    @venue
+  end
+  def date
+    @date
   end
 end

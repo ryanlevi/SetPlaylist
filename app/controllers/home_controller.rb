@@ -6,7 +6,8 @@ class HomeController < ApplicationController
     @featured_events.push HTTParty.get("http://api.songkick.com/api/3.0/events/16767699.json?apikey=UqncZSiBYPTv4CI0").parsed_response["resultsPage"]["results"]["event"]
   end
   def playlist
-    @setlist = GetSetlist.new(params[:artist]).setlist
+    @obj = GetSetlist.new(params[:artist])
+    @setlist = @obj.setlist
     @youtube_urls = []
     @youtube_titles = []
     @setlist.each do |track|
