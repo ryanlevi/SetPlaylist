@@ -4,6 +4,7 @@ Creates playlists based on artist's setlists.
 
 ===TODO
 * Add links to homepage artists under featured events
+* Shuffle option
 * Create a cache for events
 * Event integration -- offer set playlists for ALL events, integrate songkick (so that user visits setplaylist.com/event/songkick_event_id)
 * RESTful playlist page -- user can visit /playlist/artist_id or /playlist/artist_id/event_id
@@ -12,4 +13,7 @@ Creates playlists based on artist's setlists.
 * Testing - rspec, cucumber, selenium
 * Typeahead (artist suggestions)
 * Create a cache for event tracklists
+* Player across ALL pages (like soundcloud). Let user browse/search for playlists while listening.
+* User accounts so user can aggregate their favorite event playlists
+* Custom "SetWishList" playlists and Event lists (For festivalheads who want to predict or listen to their "ideal" lineup)
 * Build an engine for track iding on YouTube (possibly a seperate project that becomes integrated into SetPlaylist) where you input a song id and you get a possible YouTube link for that song. If that is incorrect, user reports it and admin approves. This is for way in advance, as the current track IDing algorithm so far has been great.
