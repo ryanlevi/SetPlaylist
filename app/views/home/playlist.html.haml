@@ -4,8 +4,6 @@
   var titles = [#{@youtube_titles.map { |u| '"' + u.to_s + '"' }.join(", ")}];
   document.getElementById("title").innerHTML = titles[0];
 
-  var players;
-
   // create youtube player
   var player;
   var i;
