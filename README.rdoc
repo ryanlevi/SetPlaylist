@@ -1,16 +1,21 @@
 == SetPlaylist
 
-Creates playlists based on artist's setlists.
+Creates playlists based on an artist's setlists from previous concerts.
 
 ===TODO
 * Shuffle option
+* Bookmark Songs
+* Add report button on playlist page to report errors; automatically report broken artists
+* Better looking 404 pages
+* Start using artist ids instead of just search
+* Stop using last fm for typeahead, use either setlist.fm's api or songkick's... or somehow integrate the 2
 * Create a cache for events
 * Event integration -- offer set playlists for ALL events, integrate songkick (so that user visits setplaylist.com/event/songkick_event_id)
-* RESTful playlist page -- user can visit /playlist/artist_id or /playlist/artist_id/event_id
-* More features on playlist page -- show upcoming events, show other events (select through past events)
+* RESTful playlist page -- user can visit /playlist/artist_id for most recent event or /playlist/artist_id/event_id
+* More features on playlist page -- show upcoming events (use location data to show events near you), show other events (select through past events)
+* Filter events: ie, show only festivals or show setlists from around my area
 * Admin page -- select featured festivals on homepage
 * Testing - rspec, cucumber, selenium
-* Typeahead (artist suggestions)
 * Create a cache for event tracklists
 * Player across ALL pages (like soundcloud). Let user browse/search for playlists while listening.
 * User accounts so user can aggregate their favorite event playlists
