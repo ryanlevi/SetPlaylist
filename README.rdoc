@@ -3,7 +3,6 @@
 Creates playlists based on artist's setlists.
 
 ===TODO
-* Add links to homepage artists under featured events
 * Shuffle option
 * Create a cache for events
 * Event integration -- offer set playlists for ALL events, integrate songkick (so that user visits setplaylist.com/event/songkick_event_id)
