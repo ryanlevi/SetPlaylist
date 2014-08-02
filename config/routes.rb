@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'playlist', to: 'home#playlist'
   get 'about', to: 'home#about'
+  get '/event', to: 'home#event'
+  get 'event/:id', to: 'home#event'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
