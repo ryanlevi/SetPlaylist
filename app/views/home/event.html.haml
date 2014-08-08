@@ -1,22 +1,22 @@
-%br
-%br
-- if @event
-  %h2= @event["displayName"]
-  %p
-  -@event["performance"].each do |artist|
-    = link_to(artist["displayName"], "/playlist?artist=#{artist["displayName"]}")
-    %br
-- else
-  %h2 Event Search
-  Search for an event by the artist you want to see!
-  %form.form-horizontal{action: "/event", method: "get"}
-    .form-group.form-group-lg{style: "padding-left: 14px;"}
-      .row
-        .col-xs-4
-          #remote
-            %input.form-control.typeahead{placeholder: "Artist", type: "text", name: "artist"}
-          %br
-      %input.btn.btn-primary.btn-lg{type: "submit", value: "Search"}
+.jumbotron
+  .container
+    - if @event
+      %h2= @event["displayName"]
+      %p
+      -@event["performance"].each do |artist|
+        = link_to(artist["displayName"], "/playlist?artist=#{artist["displayName"]}")
+        %br
+    - else
+      %h2 Event Search
+      Search for an event by the artist you want to see!
+      %form.form-horizontal{action: "/event", method: "get"}
+        .form-group.form-group-lg{style: "padding-left: 14px;"}
+          .row
+            .col-xs-4
+              #remote
+                %input.form-control.typeahead{placeholder: "Artist", type: "text", name: "artist"}
+              %br
+          %input.btn.btn-primary.btn-lg{type: "submit", value: "Search"}
 :css
   .typeahead, .tt-query, .tt-hint {
       border: 2px solid #CCCCCC;
