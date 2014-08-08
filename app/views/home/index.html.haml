@@ -21,8 +21,7 @@
         %h2= event["displayName"]
         %p
         -event["performance"].take(10).each do |artist|
-          = link_to(artist["displayName"], "/playlist?artist=#{artist["displayName"]}")
-          = ", "
+          = link_to(artist["displayName"], "/playlist?artist=#{artist["displayName"]}") + ", "
         = "and more!"
         %p
           %br
